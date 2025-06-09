@@ -18,30 +18,39 @@ const { url = Astro.url.href } = Astro.props
 ---
 
 <ul class="ml-[-10px] flex flex-wrap gap-3 pt-4">
-  <li class="animate-bouncing">
-    <a
-      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`}
+<li class="animate-bouncing">
+    <a href={`mailto:?subject=Check%20out%20this%20link&body=${encodeURIComponent(url)}`}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span class="sr-only">Share on Facebook</span>
-      <Icon name="lucide:facebook" size={40} />
+      <span class="sr-only">Share via Email</span>
+      <Icon name="qlementine-icons:mail-16" size={40} />
     </a>
   </li>
   <li class="animate-bouncing">
-    <a href={`https://x.com/share?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer">
-      <span class="sr-only">Share on Twitter</span>
-      <Icon name="lucide:twitter" size={40} />
+    <a href={`https://bsky.app/intent/compose?text=Check%20out%20this%20link&url=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer">
+      <span class="sr-only">Share on Bluesky</span>
+      <Icon name="proicons:bluesky" size={40} />
     </a>
   </li>
   <li class="animate-bouncing">
     <a
-      href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`}
+      href={`https://mastodon.social/share?text=Check%20out%20this%20link&url=${encodeURIComponent(url)}`}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span class="sr-only">Share on LinkedIn</span>
-      <Icon name="lucide:linkedin" size={40} />
+      <span class="sr-only">Share on Mastodon</span>
+      <Icon name="qlementine-icons:mastodon-24" size={40} />
+    </a>
+  </li>
+  <li class="animate-bouncing">
+    <a
+      href={`https://www.reddit.com/submit?url=${encodeURIComponent(url)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="sr-only">Share on Reddit</span>
+      <Icon name="ph:reddit-logo" size={40} />
     </a>
   </li>
 </ul>
