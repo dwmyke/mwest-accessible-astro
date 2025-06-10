@@ -223,6 +223,11 @@ import Logo from './Logo.astro'
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+
+ @include breakpoint('xl') {
+ max-width: 95%;
+ padding-inline: unset;
+ }
     }
 
     // Mobile-first: show mobile menu by default
@@ -287,7 +292,7 @@ import Logo from './Logo.astro'
         .has-dropdown > button:hover,
         .has-dropdown > button:focus-visible {
           text-decoration: underline;
-          text-decoration-style: wavy;
+          text-decoration-style: solid;
           text-decoration-thickness: 1px;
           text-underline-offset: 7px;
         }
